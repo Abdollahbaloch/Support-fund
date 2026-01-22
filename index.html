@@ -2,56 +2,238 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>Solidarity Support Fund</title>
+  <title>حمایت از من و خانواده‌ام</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {font-family: sans-serif; background:#0f172a; color:#fff; margin:0; padding:0;}
-    .box {max-width:700px; margin:auto; padding:20px;}
+    .box {max-width:800px; margin:auto; padding:20px;}
     h1 {color:#38bdf8;}
-    .card {background:#020617; padding:20px; border-radius:12px; margin-top:15px;}
-    .addr {background:#020617; padding:10px; border-radius:8px; word-break:break-all;}
-    button {background:#38bdf8; border:none; padding:10px 16px; border-radius:8px; cursor:pointer;}
+    .card {background:#020617; padding:20px; border-radius:14px; margin-top:15px;}
+    .addr {background:#020617; padding:12px; border-radius:8px; word-break:break-all; border:1px solid #1e293b;}
+    button {background:#38bdf8; border:none; padding:8px 14px; border-radius:8px; cursor:pointer; margin-right:5px;}
+    .langbtns {margin:15px 0;}
+    .note {opacity:0.85; font-size:14px;}
+    img.qr {max-width:250px; border-radius:12px; margin-top:10px;}
+    .copy-btn {margin-top:8px; background:#10b981;}
   </style>
 </head>
+
 <body>
   <div class="box">
-    <h1>🤍 Solidarity Support Fund</h1>
 
-    <div class="card">
-      <p>
-        این صفحه برای حمایت جمعی از یک فعال بلوچ و خانواده‌اش ایجاد شده است که
-        به‌دلیل شرایط امنیتی امکان اشتغال عادی ندارد و سال‌هاست در تبعید زندگی می‌کند.
-      </p>
-      <p>
-        هدف این طرح، کاهش فشار مالی و ایجاد امکان تمرکز وی بر فعالیت‌های مهم انسانی و اجتماعی در بلوچستان است.
-      </p>
+    <h1>🤍 حمایت از من و خانواده‌ام</h1>
+
+    <!-- Language Buttons -->
+    <div class="langbtns">
+      <button onclick="setLang('fa')">فارسی</button>
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('ar')">عربي</button>
     </div>
 
-    <div class="card">
-      <h3>💸 روش‌های حمایت (Crypto)</h3>
+    <!-- FARSI -->
+    <div id="fa">
 
-      <p>USDT - TRC20</p>
-      <div class="addr">PUT_YOUR_WALLET_ADDRESS_HERE</div>
+      <div class="card">
+        <h3>معرفی</h3>
+        <p>
+          من یک فعال بلوچ هستم و به دلیل شرایط امنیتی خاص، سال‌هاست که مجبور به ترک زادگاهم شده‌ام.  
+          زندگی در غربت و حفاظت از خانواده‌ام باعث شده که امکان کار عادی برای من فراهم نباشد.
+        </p>
+        <p>
+          من دارای سه فرزند هستم و با وجود تلاش‌های فراوان، با مشکلات شدید مالی روبه‌رو شده‌ایم.  
+          هدف من از این صفحه، کاهش فشار مالی و ایجاد حداقل ثبات برای خانواده‌ام است تا بتوانیم با تمرکز بیشتری بر فعالیت‌های انسان‌دوستانه‌مان در بلوچستان زندگی برای مردم بلوچ ادامه دهیم.
+        </p>
+      </div>
 
-      <p>USDT - BEP20</p>
-      <div class="addr">PUT_YOUR_WALLET_ADDRESS_HERE</div>
+      <div class="card">
+        <h3>دعوت به همکاری و حمایت ماهانه</h3>
+        <p>
+          این طرح بر پایه همبستگی جمعی شکل گرفته است.  
+          حتی حمایت کوچک ماهانه شما می‌تواند فشار مالی ما را کاهش دهد و به خانواده‌ام کمک کند تا بهتر زندگی کنیم.
+        </p>
+        <p>
+          حمایت شما می‌تواند یک‌باره یا ماهانه باشد.  
+          وقتی کمک‌های کوچک کنار هم جمع شوند، تفاوت واقعی ایجاد می‌کنند.
+        </p>
+      </div>
 
-      <p style="margin-top:10px;">
-        اگر مایل به حمایت ماهانه هستید، می‌توانید هر ماه مبلغی در توان خود ارسال نمایید.
-      </p>
+      <div class="card">
+        <h3>چرا USDT (TRC20)؟</h3>
+        <p>
+          من برای دریافت کمک‌ها از روش USDT (TRC20) استفاده می‌کنم زیرا:  
+          1. امکان داشتن حساب بانکی برای من در شرایط فعلی وجود ندارد  
+          2. حتی اگر داشتم، به دلیل مسائل امنیتی مناسب نبود  
+          3. این روش سریع و مستقیم است و حمایت شما بلافاصله به دست من و خانواده‌ام می‌رسد  
+          این روش امن و راحت است و کمک شما بدون مشکل منتقل می‌شود.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>روش ارسال کمک مالی (USDT - TRC20)</h3>
+        <p><b>آدرس کیف پول من (USDT - TRC20):</b></p>
+        <div class="addr" id="wallet">TU8AuF5GfhuPYLbFcxFJUJwU3RszD8YHug</div>
+        <button class="copy-btn" onclick="copyWallet('fa')">کپی آدرس</button>
+
+        <p><b>QR Code:</b></p>
+        <img src="https://i.imgur.com/U12IXJs.png" alt="USDT TRC20 QR Code" class="qr"/>
+
+        <p class="note">
+          مراحل ارسال:
+          <br>1. وارد کیف پول خود شوید (Trust Wallet، TronLink، Binance و...)
+          <br>2. گزینه Send یا Withdraw را انتخاب کنید
+          <br>3. ارز USDT و شبکه TRC20 را انتخاب کنید
+          <br>4. آدرس بالا را وارد کرده و مبلغ موردنظر را ارسال نمایید
+        </p>
+
+        <p class="note">
+          اگر مایل به حمایت ماهانه هستید، می‌توانید هر ماه در حد توان خود مبلغی ارسال کنید.
+        </p>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>🔐 شفافیت</h3>
-      <p>
-        گزارش کلی هزینه‌ها بدون افشای اطلاعات شخصی یا امنیتی به‌صورت ماهانه منتشر خواهد شد
+    <!-- ENGLISH -->
+    <div id="en" style="display:none;">
 
-      </p>
+      <div class="card">
+        <h3>Introduction</h3>
+        <p>
+          I am a Baloch activist, and due to long-term security risks, I have been forced to leave my homeland.  
+          Living in exile and protecting my family makes it impossible for me to maintain regular employment.
+        </p>
+        <p>
+          I have three children and, despite continuous efforts, we face serious financial challenges.  
+          The purpose of this page is to reduce financial pressure and provide minimal stability for my family so we can continue life for the Baloch people with greater focus on our humanitarian activities in Balochistan.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Call for Monthly Support</h3>
+        <p>
+          This initiative is based on collective solidarity.  
+          Even a small monthly contribution can help reduce our financial burden and support my family.
+        </p>
+        <p>
+          Support can be one-time or monthly.  
+          When small contributions come together, they create real impact.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Why USDT (TRC20)?</h3>
+        <p>
+          I use USDT (TRC20) because:  
+          1. I do not have a bank account under current circumstances  
+          2. Even if I had one, it would not be safe due to security concerns  
+          3. This method is fast and direct, and your support reaches me and my family immediately  
+          This is a secure and simple way for your contribution to be delivered safely.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>How to Send Support (USDT - TRC20)</h3>
+        <p><b>My wallet address (USDT - TRC20):</b></p>
+        <div class="addr" id="wallet-en">TU8AuF5GfhuPYLbFcxFJUJwU3RszD8YHug</div>
+        <button class="copy-btn" onclick="copyWallet('en')">Copy Address</button>
+
+        <p><b>QR Code:</b></p>
+        <img src="https://i.imgur.com/U12IXJs.png" alt="USDT TRC20 QR Code" class="qr"/>
+
+        <p class="note">
+          Steps:
+          <br>1. Open your crypto wallet (Trust Wallet, TronLink, Binance, etc.)
+          <br>2. Choose Send or Withdraw
+          <br>3. Select USDT and TRC20 network
+          <br>4. Paste the above address and send the amount
+        </p>
+
+        <p class="note">
+          For monthly support, you may send a small amount each month according to your ability.
+        </p>
+      </div>
+
     </div>
 
-    <p style="margin-top:30px; opacity:0.7;">
-      Together we stand. Together we survive.
-    </p>
+    <!-- ARABIC -->
+    <div id="ar" style="display:none; direction:rtl;">
+
+      <div class="card">
+        <h3>التعريف</h3>
+        <p>
+          أنا ناشط بلوشي، وبسبب المخاطر الأمنية الطويلة الأمد، اضطررت لمغادرة موطني.  
+          العيش في الغربة وحماية أسرتي يجعل من المستحيل العمل بشكل طبيعي.
+        </p>
+        <p>
+          لدي ثلاثة أطفال، وعلى الرغم من الجهود المستمرة، نواجه صعوبات مالية كبيرة.  
+          الغرض من هذه الصفحة هو تقليل الضغوط المالية وتوفير الحد الأدنى من الاستقرار لعائلتي لنتمكن من مواصلة الحياة لشعب بلوش بمزيد من التركيز على أنشطتنا الإنسانية في بلوشستان.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>دعوة للمساهمة الشهرية</h3>
+        <p>
+          تعتمد هذه المبادرة على التضامن الجماعي.  
+          حتى المساهمة الشهرية الصغيرة يمكن أن تساعد في تخفيف العبء المالي ودعم عائلتي.
+        </p>
+        <p>
+          يمكن تقديم الدعم مرة واحدة أو شهريًا.  
+          عندما تتجمع المساهمات الصغيرة، فإنها تحدث فرقًا حقيقيًا.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>لماذا USDT (TRC20)؟</h3>
+        <p>
+          أستخدم USDT (TRC20) لأن:  
+          1. لا أمتلك حسابًا مصرفيًا في الظروف الحالية  
+          2. حتى لو كان لدي حساب، لن يكون آمنًا بسبب المخاطر الأمنية  
+          3. هذه الطريقة سريعة ومباشرة، وتصل مساهمتك إليّ وإلى عائلتي فورًا  
+          هذه طريقة آمنة وبسيطة لضمان وصول دعمكم.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>طريقة إرسال الدعم (USDT - TRC20)</h3>
+        <p><b>عنوان محفظتي (USDT - TRC20):</b></p>
+        <div class="addr" id="wallet-ar">TU8AuF5GfhuPYLbFcxFJUJwU3RszD8YHug</div>
+        <button class="copy-btn" onclick="copyWallet('ar')">نسخ العنوان</button>
+
+        <p><b>QR Code:</b></p>
+        <img src="https://i.imgur.com/U12IXJs.png" alt="USDT TRC20 QR Code" class="qr"/>
+
+        <p class="note">
+          الخطوات:
+          <br>1. افتح محفظتك الرقمية
+          <br>2. اختر إرسال أو سحب
+          <br>3. اختر USDT وشبكة TRC20
+          <br>4. الصق العنوان وأرسل المبلغ
+        </p>
+
+        <p class="note">
+          للدعم الشهري يمكن إرسال مبلغ بسيط كل شهر حسب الاستطاعة.
+        </p>
+      </div>
+
+    </div>
+
   </div>
+
+<script>
+function setLang(lang){
+  document.getElementById('fa').style.display = 'none';
+  document.getElementById('en').style.display = 'none';
+  document.getElementById('ar').style.display = 'none';
+  document.getElementById(lang).style.display = 'block';
+}
+
+function copyWallet(lang){
+  let walletId = lang==='fa' ? 'wallet' : lang==='en' ? 'wallet-en' : 'wallet-ar';
+  let text = document.getElementById(walletId).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert(lang==='fa' ? 'آدرس کپی شد!' : lang==='en' ? 'Address copied!' : 'تم نسخ العنوان!');
+  });
+}
+</script>
+
 </body>
 </html>
